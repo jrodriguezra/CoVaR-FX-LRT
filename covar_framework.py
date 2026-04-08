@@ -18,7 +18,7 @@ CONFIDENCE = 0.99
 Z_ALPHA = norm.ppf(CONFIDENCE)  # 2.326
 EWMA_LAMBDA = 0.94
 RATE_TENORS = ['1mo','2mo','3mo','4mo','6mo','1y','2y','3y','5y','7y','10y','20y','30y']
-FX_PAIRS = ['USDBRL','USDCOP','USDCLP','USDPEN','USDMXN']
+FX_PAIRS = ['USDBRL','USDCOP','USDCLP','USDPEN','USDMXN', 'USDEUR'	,'USDGBP','USDJPY',	'USDAUD','USDCHF']
 N_RATES = len(RATE_TENORS)
 N_FX = len(FX_PAIRS)
 N_TOTAL = N_RATES + N_FX
@@ -290,7 +290,7 @@ if __name__ == '__main__':
         500, 1000, 2000, 3000, 2000,  # 1Y-7Y: long duration
         -5000, -2000, -1000,  # 10Y-30Y: short duration
         # LatAm FX deltas (USD per 1% move)
-        -10000, 5000, 0, -20000, 8000  # BRL, COP, CLP, PEN, MXN
+        -10000, 5000, 0, -20000, 8000,1,1,1,1,1  # BRL, COP, CLP, PEN, MXN
     ])
     print(f'\nrisk position S:')
     for i, lab in enumerate(LABELS):
